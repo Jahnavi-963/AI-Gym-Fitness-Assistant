@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { API_BASE } from "@/lib/api";
+
 type Meal = {
   meal_name: string;
   foods: string[];
@@ -50,26 +51,22 @@ export default function DietPage() {
   const [dailyCalories, setDailyCalories] = useState("");
   const [bmi, setBmi] = useState<number | null>(null);
 
-  const [fitnessGoal, setFitnessGoal] =
-    useState("weight_loss");
+  const [fitnessGoal, setFitnessGoal] = useState("weight_loss");
 
   const [dietPreference, setDietPreference] =
     useState("vegetarian");
 
-  const [mealsPerDay, setMealsPerDay] =
-    useState("4");
+  const [mealsPerDay, setMealsPerDay] = useState("4");
 
   const [dietPlan, setDietPlan] =
     useState<DietPlan | null>(null);
 
-  const [loading, setLoading] =
-    useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [profileLoading, setProfileLoading] =
     useState(false);
 
-  const [error, setError] =
-    useState("");
+  const [error, setError] = useState("");
 
   // =========================
   // NUTRITION TRACKING
@@ -81,8 +78,7 @@ export default function DietPage() {
   const [nutritionSummary, setNutritionSummary] =
     useState<NutritionSummary | null>(null);
 
-  const [foodName, setFoodName] =
-    useState("");
+  const [foodName, setFoodName] = useState("");
 
   const [foodCalories, setFoodCalories] =
     useState("");
@@ -90,11 +86,9 @@ export default function DietPage() {
   const [foodProtein, setFoodProtein] =
     useState("");
 
-  const [foodCarbs, setFoodCarbs] =
-    useState("");
+  const [foodCarbs, setFoodCarbs] = useState("");
 
-  const [foodFats, setFoodFats] =
-    useState("");
+  const [foodFats, setFoodFats] = useState("");
 
   const [nutritionLoading, setNutritionLoading] =
     useState(false);
@@ -115,8 +109,9 @@ export default function DietPage() {
     setProfileLoading(true);
 
     try {
+      // FIXED: profile must come from /auth/me
       const profileResponse = await fetch(
-        `${API_BASE}/diet/plan`,
+        `${API_BASE}/auth/me`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -144,8 +139,8 @@ export default function DietPage() {
         profile.fitness_goal
       ) {
         const fitnessResponse = await fetch(
-             `${API_BASE}/fitness/calculate`,
-             {
+          `${API_BASE}/fitness/calculate`,
+          {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -322,9 +317,10 @@ export default function DietPage() {
         setDailyCalories("2000");
       }
 
+      // FIXED: diet generation must use /diet/plan
       const profileResponse = await fetch(
-  `    ${API_BASE}/auth/me`,
-         {
+        `${API_BASE}/diet/plan`,
+        {
           method: "POST",
           headers: {
             "Content-Type":
@@ -925,9 +921,7 @@ export default function DietPage() {
                 </div>
               </div>
 
-              {/* ========================= */}
               {/* NUTRITION TRACKING */}
-              {/* ========================= */}
 
               <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6">
 
