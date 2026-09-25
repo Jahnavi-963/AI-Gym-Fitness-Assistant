@@ -116,7 +116,7 @@ export default function DietPage() {
 
     try {
       const profileResponse = await fetch(
-        `${API_BASE}/auth/me`,
+        `${API_BASE}/diet/plan`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
