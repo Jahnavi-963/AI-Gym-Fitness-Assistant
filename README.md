@@ -2,27 +2,26 @@
 
 An AI-powered personal fitness management system that combines intelligent workout assistance, nutrition guidance, habit tracking, motivation, performance analysis, gym recommendations, workout planning, challenges, analytics, notifications, IoT integration, and an administrative dashboard into a unified fitness ecosystem.
 
----
-
 ## Overview
 
-The **AI Gym & Fitness Assistant** is designed to act as a personalized digital fitness companion.
+The **AI Gym & Fitness Assistant** is designed to provide personalized fitness support using Artificial Intelligence, Machine Learning, Computer Vision, NLP, and IoT technologies.
 
-The system combines:
+The system helps users:
 
-- AI-based exercise analysis
-- Personalized fitness and nutrition recommendations
-- Behavioral analysis
-- Conversational AI
-- Performance tracking
-- Gym recommendations
-- Workout planning
-- Fitness challenges
-- IoT integration
-- Analytics and progress tracking
-- User and admin management
-
-The application provides both **AI-powered guidance** and **fitness data management** through a modern web interface.
+- Track workouts and fitness progress
+- Perform exercises with AI-based pose detection
+- Receive real-time workout guidance
+- Generate personalized diet recommendations
+- Track fitness habits and workout consistency
+- Interact with an AI fitness companion
+- Analyze exercise performance
+- Discover nearby gyms
+- Create and manage workout plans
+- Participate in fitness challenges
+- Receive notifications and motivational guidance
+- Integrate smart gym equipment using MQTT
+- Monitor fitness information through analytics
+- Manage the platform through an admin dashboard
 
 ---
 
@@ -30,172 +29,175 @@ The application provides both **AI-powered guidance** and **fitness data managem
 
 ## 1. AI Gym Trainer
 
-The AI Gym Trainer uses computer vision and pose analysis to assist users during workouts.
+Provides AI-assisted exercise training using computer vision and pose estimation.
 
-### Features
+**Features:**
 
-- Real-time pose detection
+- Real-time webcam-based pose detection
 - Exercise recognition
 - Repetition counting
-- Body-angle analysis
-- Exercise-stage detection
-- Form analysis
-- Form correction feedback
-- Workout duration tracking
-- Calorie estimation
-- Workout session storage
+- Exercise stage detection
+- Form monitoring
+- Joint-angle analysis
+- Exercise-specific feedback
+- Workout session tracking
 
-### Supported Exercises
+**Supported exercises include:**
 
 - Squats
 - Push-ups
 - Bicep curls
 - Lunges
-- Shoulder press
+- Shoulder presses
 
-### Technology
-
-- MediaPipe Tasks Vision
-- Computer Vision
-- Pose Landmarker
+**Technology:** MediaPipe Pose / Computer Vision
 
 ---
 
 ## 2. AI Dietician & Calorie Coach
 
-The AI Dietician provides personalized nutrition and calorie guidance based on user information and fitness goals.
+Provides personalized nutrition guidance based on user fitness information and preferences.
 
-### Features
+**Features:**
 
-- BMI calculation
-- BMR calculation
-- Daily calorie estimation
+- BMI-based recommendations
 - Fitness-goal detection
-- Food-preference detection
-- Goal-based meal recommendations
-- Meal planning
-- Grocery suggestions
-- Nutrition tracking
-- NLP-based diet chatbot
+- Weight-loss recommendations
+- Vegetarian preference detection
+- Nutrition guidance
+- Diet recommendations
+- AI diet chat
+- Suggested food choices
 
-Supported preferences and goals can include vegetarian/non-vegetarian choices and objectives such as weight loss or fitness improvement.
+**Technology:** NLP + AI-powered recommendation logic
 
 ---
 
 ## 3. Smart Gym Assistant
 
-The Smart Gym Assistant connects the fitness application with IoT-enabled gym equipment.
+Connects the fitness application with smart gym equipment using MQTT and Node-RED.
 
-### Features
+**Features:**
 
 - MQTT communication
 - Smart equipment commands
-- Equipment monitoring
-- IoT integration
-- Node-RED workflow integration
-- Real-time MQTT message handling
+- Equipment control
+- Real-time message handling
+- Node-RED integration
+- Smart gym monitoring
 
-### IoT Stack
+Example commands include:
 
-- MQTT
-- HiveMQ
-- Node-RED
+- Set treadmill speed
+- Control equipment settings
+- Send smart gym instructions
+
+**Technology:** MQTT + Paho MQTT + Node-RED + HiveMQ
 
 ---
 
 ## 4. AI Fitness Habit Tracker
 
-The Habit Tracker uses behavioral data and machine learning to understand workout patterns.
+Uses behavioral machine learning to analyze workout consistency.
 
-### Features
+**Features:**
 
+- Workout history analysis
 - Workout frequency tracking
-- Workout streaks
+- Streak monitoring
 - Missed-workout tracking
 - Engagement analysis
-- Skip-risk prediction
-- Motivation support
-- Dynamic scheduling
-- Behavioral insights
+- Workout skip-risk prediction
+- Personalized motivational insights
 
-### Machine Learning
+**Machine Learning Model:** Logistic Regression
 
-A Logistic Regression model is used to estimate workout skip risk using behavioral and workout-history features.
+**Technology:** Scikit-learn
 
 ---
 
 ## 5. Virtual Gym Buddy
 
-The Virtual Gym Buddy provides conversational fitness assistance.
+Provides conversational AI support for fitness motivation and guidance.
 
-### Features
+**Features:**
 
-- Conversational AI
-- Workout guidance
-- Nutrition support
-- Fitness motivation
+- AI fitness conversation
 - Sentiment analysis
-- Emotional-state guidance
+- Emotional-state detection
 - Personalized responses
+- Fitness motivation
+- Workout guidance
+- Fallback responses
 
-The assistant can provide contextual recommendations based on the user's fitness activity and conversation.
+**Technology:** Groq LLM + NLP
 
 ---
 
 ## 6. Pose-to-Performance Analyzer
 
-The Performance Analyzer converts workout data into measurable performance insights.
+Analyzes workout performance and fitness progress.
 
-### Features
+**Features:**
 
-- Performance Score
-- Form Score
-- Motion-efficiency analysis
-- Repetition tracking
-- Calories burned
-- Exercise breakdown
-- Workout history
-- Progress analysis
-- Performance reports
+- Exercise performance analysis
+- Performance score
+- Workout statistics
+- Progress tracking
+- Historical workout analysis
+- Analytics dashboard
+
+The system uses workout history and exercise data to provide meaningful fitness insights.
 
 ---
 
 ## 7. Gym Recommender & Planner
 
-The Gym Recommender helps users discover nearby gyms and fitness opportunities.
+Helps users discover nearby gyms and fitness opportunities.
 
-### Features
+**Features:**
 
-- Nearby gym search
-- Location-based recommendations
+- Location-based gym search
+- Nearby gym discovery
 - Fitness-goal-based recommendations
-- Activity-level analysis
-- Historical workout-data analysis
-- Personalized gym matching
-- Weekly workout planning
+- Activity-level consideration
+- Workout-history-based scoring
+- AI match score
+- Weekly fitness planning
+- Gym recommendation ranking
 
-The recommendation system combines user fitness information with workout history and location-based gym data.
+**Data Sources:**
+
+- OpenStreetMap
+- Nominatim
+- Overpass API
 
 ---
 
 # Additional Features
 
-- JWT authentication
 - User registration and login
-- Personal profile
-- User settings
+- JWT authentication
+- Password hashing
+- User profile management
+- Fitness calculation
+- BMI calculation
+- BMR calculation
+- Daily calorie estimation
 - Workout history
-- Personalized workout planner
+- Workout planner
 - Fitness challenges
 - Challenge progress tracking
 - Notifications
 - Analytics dashboard
-- Performance tracking
+- Performance dashboard
 - Admin dashboard
 - Storage integration
+- Local storage fallback
 - PostgreSQL database
-- SQLite planner database
-- MQTT and Node-RED integration
+- SQLite-based planner storage
+- MQTT smart gym integration
+- API documentation using Swagger/OpenAPI
 
 ---
 
@@ -204,98 +206,83 @@ The recommendation system combines user fitness information with workout history
 | Layer | Technologies |
 |---|---|
 | Frontend | Next.js, React, TypeScript, Tailwind CSS |
-| Frontend Architecture | Next.js App Router |
-| Backend | Python, FastAPI, Uvicorn |
-| Database ORM | SQLAlchemy |
-| Authentication | JWT |
-| AI / Computer Vision | MediaPipe |
-| Machine Learning | scikit-learn, Logistic Regression |
-| NLP / LLM | NLP processing, Groq LLM integration |
+| Backend | FastAPI, Python |
 | Database | PostgreSQL, SQLite |
-| IoT | MQTT, HiveMQ, Node-RED |
-| Testing | pytest, httpx |
-| Storage | Local storage with AWS S3 integration |
-| API Documentation | FastAPI Swagger / OpenAPI |
+| Authentication | JWT, Passlib, bcrypt |
+| Computer Vision | MediaPipe |
+| Machine Learning | Scikit-learn, Logistic Regression |
+| NLP / AI | Groq LLM |
+| IoT | MQTT, Paho MQTT, Node-RED, HiveMQ |
+| Gym Data | OpenStreetMap, Nominatim, Overpass API |
+| Storage | Local Storage, AWS S3 integration |
+| API Documentation | Swagger / OpenAPI |
+| Testing | Pytest, HTTPX |
 
 ---
 
 # System Architecture
 
 ```text
-                    ┌──────────────────────┐
-                    │      User / Admin    │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   Next.js Frontend   │
-                    │ React + TypeScript    │
-                    └──────────┬───────────┘
-                               │
-                         REST API / JWT
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │    FastAPI Backend    │
-                    └──────────┬───────────┘
-                               │
-          ┌────────────────────┼────────────────────┐
-          │                    │                    │
-          ▼                    ▼                    ▼
- ┌────────────────┐   ┌────────────────┐   ┌────────────────┐
- │   PostgreSQL   │   │ SQLite Planner │   │   AI Services  │
- │ Main Database  │   │    Database    │   │ ML / NLP / CV  │
- └────────────────┘   └────────────────┘   └────────────────┘
-                                                  │
-                                                  ▼
-                                        ┌──────────────────┐
-                                        │ MQTT / HiveMQ    │
-                                        └────────┬─────────┘
-                                                 │
-                                                 ▼
-                                        ┌──────────────────┐
-                                        │    Node-RED      │
-                                        │  Smart Gym IoT   │
-                                        └──────────────────┘
+                    ┌──────────────────────────┐
+                    │      Next.js Frontend    │
+                    │   React + TypeScript     │
+                    └────────────┬─────────────┘
+                                 │
+                                 │ REST API
+                                 ▼
+                    ┌──────────────────────────┐
+                    │      FastAPI Backend     │
+                    │   Authentication & APIs  │
+                    └────────────┬─────────────┘
+                                 │
+              ┌──────────────────┼──────────────────┐
+              │                  │                  │
+              ▼                  ▼                  ▼
+       ┌────────────┐     ┌────────────┐     ┌────────────┐
+       │ PostgreSQL │     │   SQLite   │     │ AI / ML    │
+       │  Database  │     │  Planner   │     │ Services   │
+       └────────────┘     └────────────┘     └─────┬──────┘
+                                                   │
+                          ┌────────────────────────┼─────────────────────┐
+                          │                        │                     │
+                          ▼                        ▼                     ▼
+                    ┌────────────┐          ┌────────────┐       ┌────────────┐
+                    │ MediaPipe  │          │ Groq LLM   │       │ Scikit     │
+                    │ Pose AI    │          │ AI Buddy   │       │ Learn      │
+                    └────────────┘          └────────────┘       └────────────┘
+
+                    Smart Gym / IoT Layer
+                              │
+                              ▼
+                       ┌────────────┐
+                       │   MQTT     │
+                       │  HiveMQ    │
+                       └─────┬──────┘
+                             │
+                             ▼
+                       ┌────────────┐
+                       │ Node-RED   │
+
+```
 # Project Structure
+
+```text
 AI-Gym-Fitness-Assistant/
 │
 ├── backend/
 │   ├── app/
-│   │   ├── ai/
-│   │   │   └── pose_analyzer.py
-│   │   │
 │   │   ├── api/
-│   │   │   ├── admin.py
-│   │   │   ├── auth.py
-│   │   │   ├── buddy.py
-│   │   │   ├── challenges.py
-│   │   │   ├── diet.py
-│   │   │   ├── fitness.py
-│   │   │   ├── gyms.py
-│   │   │   ├── habits.py
-│   │   │   ├── iot.py
-│   │   │   ├── notifications.py
-│   │   │   ├── nutrition.py
-│   │   │   ├── planner.py
-│   │   │   ├── storage.py
-│   │   │   ├── trainer.py
-│   │   │   └── workouts.py
-│   │   │
+│   │   ├── models/
+│   │   ├── schemas/
 │   │   ├── services/
-│   │   │   ├── behavior_model.py
-│   │   │   ├── mqtt_service.py
-│   │   │   └── storage.py
-│   │   │
-│   │   ├── database.py
-│   │   ├── models.py
 │   │   └── main.py
 │   │
 │   ├── tests/
-│   │   └── test_api.py
-│   │
-│   ├── migrate_sqlite_to_postgres.py
-│   └── requirements.txt
+│   ├── storage/
+│   ├── venv/
+│   ├── .env
+│   ├── requirements.txt
+│   └── gym_fitness.db
 │
 ├── frontend/
 │   ├── app/
@@ -319,317 +306,393 @@ AI-Gym-Fitness-Assistant/
 │   ├── lib/
 │   │   └── api.ts
 │   │
-│   └── public/
-│       └── models/
-│           └── pose_landmarker_lite.task
+│   ├── public/
+│   │   └── models/
+│   │
+│   ├── .env.local
+│   ├── package.json
+│   └── next.config.ts
 │
-└── README.md
-Local Development Setup
-Prerequisites
+├── README.md
+└── .gitignore
+```
+---
 
-Install:
+# Local Development Setup
 
-Python 3.10+
-Node.js
-npm
-PostgreSQL
-Node-RED
-Git
-Run Backend
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/Jahnavi-963/AI-Gym-Fitness-Assistant.git
+cd AI-Gym-Fitness-Assistant
+```
+
+## 2. Backend Setup
 
 Open PowerShell:
 
+```powershell
 cd backend
 .\venv\Scripts\Activate.ps1
+```
+
+Start the FastAPI server:
+
+```powershell
 python -m uvicorn app.main:app --reload
+```
 
- # Backend:
+Backend:
 
+```text
 http://127.0.0.1:8000
+```
 
-Swagger API documentation:
+Swagger API Documentation:
 
+```text
 http://127.0.0.1:8000/docs
+```
 
-Health check:
+Health Check:
 
+```text
 http://127.0.0.1:8000/health
-Run Frontend
+```
+
+## 3. Frontend Setup
 
 Open another terminal:
 
+```powershell
 cd frontend
 npm install
 npm run dev
+```
 
- # Frontend:
+Frontend:
 
+```text
 http://localhost:3000
-Run Node-RED
-node-red
+```
 
- # Node-RED:
+The frontend uses the following environment variable:
 
-http://127.0.0.1:1880/
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+```
 
-MQTT broker:
+---
 
-broker.hivemq.com:1883
+# Important API Endpoints
 
-MQTT topic:
+| Feature | Endpoint |
+|---|---|
+| Register | `POST /auth/register` |
+| Login | `POST /auth/login` |
+| Current User | `GET /auth/me` |
+| Fitness Calculation | `POST /fitness/calculate` |
+| Diet Plan | `POST /diet/plan` |
+| Diet Chat | `POST /diet/chat` |
+| Habit Summary | `GET /habits/summary` |
+| AI Buddy | `POST /buddy/chat` |
+| Challenges | `GET /challenges/` |
+| Challenge Creation | `POST /challenges/` |
+| Challenge Join | `POST /challenges/join` |
+| Challenge Progress | `PUT /challenges/{challenge_id}/progress` |
+| Gym Recommendation | `POST /gyms/recommend` |
+| Planner Plans | `GET /planner/plans` |
+| Create Planner | `POST /planner/plans` |
+| MQTT Status | `GET /iot/mqtt/status` |
+| MQTT Publish | `POST /iot/mqtt/publish` |
+| Storage Status | `GET /storage/status` |
+| Health Check | `GET /health` |
 
-ai-gym-fitness/smart-gym
-Important API Endpoints
-Authentication
-POST /auth/register
-POST /auth/login
-GET  /auth/me
-Fitness
-POST /fitness/calculate
-Diet & Nutrition
-POST /diet/plan
-POST /diet/chat
-Habit Tracking
-GET /habits/summary
-Gym Recommendations
-GET /gyms/recommend
-Workout Planner
-GET  /planner/plans
-POST /planner/plans
-POST /planner/plans/{plan_id}/exercises
-PUT  /planner/exercises/{exercise_id}/complete
-Challenges
-GET  /challenges/
-POST /challenges/
-POST /challenges/join
-PUT  /challenges/{challenge_id}/progress
-IoT
-GET  /iot/mqtt/status
-POST /iot/mqtt/publish
-Storage
-GET /storage/status
-Frontend Routes
-/
- /admin
- /analytics
- /buddy
- /challenges
- /diet
- /gyms
- /habits
- /login
- /notifications
- /performance
- /planner
- /profile
- /register
- /settings
- /smart-gym
- /trainer
-Database
-PostgreSQL
+---
 
-PostgreSQL is the primary application database used for:
+# Frontend Routes
 
-User accounts
-Authentication
-Fitness information
-Workout sessions
-Nutrition records
-Challenges
-Notifications
-Analytics
-Other application data
-SQLite
+| Route | Description |
+|---|---|
+| `/` | Dashboard |
+| `/login` | Login |
+| `/register` | Registration |
+| `/trainer` | AI Gym Trainer |
+| `/diet` | AI Dietician |
+| `/buddy` | Virtual Gym Buddy |
+| `/habits` | Habit Tracker |
+| `/performance` | Performance Analyzer |
+| `/analytics` | Analytics Dashboard |
+| `/challenges` | Fitness Challenges |
+| `/planner` | Workout Planner |
+| `/gyms` | Gym Recommender |
+| `/smart-gym` | Smart Gym |
+| `/notifications` | Notifications |
+| `/profile` | User Profile |
+| `/settings` | Settings |
+| `/admin` | Admin Dashboard |
 
-SQLite is currently used by the workout planner:
+---
 
-backend/gym_fitness.db
+# Database
 
-A development backup is maintained separately for recovery purposes.
+The project uses PostgreSQL as the primary application database.
 
-Storage
+Main database:
 
-The application includes a storage abstraction supporting:
+```text
+ai_gym_fitness
+```
 
-Local storage
-AWS S3 integration
+The database stores information related to:
+
+- Users
+- Authentication
+- Workout sessions
+- Nutrition logs
+- Challenges
+- Fitness data
+- User activity
+- Application records
+
+The workout planner also maintains its local SQLite database for planner-specific data.
+
+---
+
+# Storage
+
+The project includes an extensible storage service supporting:
+
+- Local storage
+- AWS S3 integration
+- Local fallback
 
 The current development configuration uses local storage fallback.
 
-AWS S3 integration is prepared for production configuration but requires valid production cloud credentials and bucket configuration.
+AWS S3 integration is implemented so that cloud storage can be configured for deployment.
 
-Never commit AWS credentials, API keys, database passwords, or JWT secrets to GitHub.
+---
 
- # IoT Integration
+# IoT Integration
 
-The Smart Gym module communicates through MQTT.
+The Smart Gym module uses MQTT communication.
 
-Example message:
+```text
+FastAPI
+   │
+   ▼
+Paho MQTT
+   │
+   ▼
+HiveMQ Public Broker
+   │
+   ▼
+Node-RED
+   │
+   ▼
+Smart Gym Equipment / Dashboard
+```
 
+Example MQTT topic:
+
+```text
+ai-gym-fitness/smart-gym
+```
+
+Example command:
+
+```json
 {
   "equipment": "treadmill_01",
   "action": "set_speed",
   "value": 6
 }
+```
+---
 
-Message flow:
+# AI / Machine Learning
 
-AI Gym Application
-        ↓
-FastAPI Backend
-        ↓
-MQTT / HiveMQ
-        ↓
-Node-RED
-        ↓
-Smart Gym Equipment / Workflow
-AI / Machine Learning
-Computer Vision
+The project integrates multiple Artificial Intelligence and Machine Learning approaches.
 
-MediaPipe Tasks Vision
+## Computer Vision
 
-Used for:
+MediaPipe Pose is used for:
 
-Pose detection
-Exercise analysis
-Body-angle calculation
-Repetition counting
-Form analysis
-Behavioral Machine Learning
+- Real-time pose detection
+- Exercise recognition
+- Joint-angle analysis
+- Repetition counting
+- Exercise stage detection
+- Form monitoring
+- Workout feedback
 
- # Logistic Regression
+## Machine Learning
 
-Used for:
+Scikit-learn Logistic Regression is used for:
 
-Workout engagement analysis
-Skip-risk prediction
-Behavioral insights
-NLP
+- Workout skip-risk prediction
+- Behavioral fitness analysis
+- Workout consistency analysis
 
-Used for:
+## NLP / Large Language Model
 
-Fitness-goal detection
-Food-preference detection
-Diet conversation
-Personalized recommendations
-Conversational AI
+Groq LLM is used for:
 
-LLM integration is used by the Virtual Gym Buddy for:
+- Virtual fitness assistance
+- Conversational guidance
+- Fitness motivation
+- Personalized responses
+- AI fitness conversations
 
-Fitness assistance
-Motivation
-Workout guidance
-Nutrition support
-Personalized responses
-Testing
-Backend Automated Tests
+## Recommendation System
 
-The backend test suite was executed using:
+The gym recommendation system considers:
 
-python -m pytest -q
+- User fitness goals
+- Activity level
+- Workout history
+- User location
+- Nearby gym information
 
-Result:
+---
 
+# Testing
+
+The backend automated test suite was executed using Pytest.
+
+```powershell
+cd backend
+.\venv\Scripts\python.exe -m pytest -q
+```
+
+Verified result:
+
+```text
 14 passed
+```
 
-The test run completed successfully.
+The application was also manually verified through:
 
-Frontend Production Build
+- FastAPI Swagger
+- Frontend pages
+- User authentication
+- AI Gym Trainer
+- AI Dietician
+- AI Fitness Habit Tracker
+- Virtual Gym Buddy
+- Fitness Challenges
+- Gym Recommendations
+- Workout Planner
+- Smart Gym MQTT
+- Node-RED integration
+- Storage integration
+- Analytics Dashboard
+- Performance Dashboard
+- Admin Dashboard
+- Notifications
+- User Profile
+- Settings
 
-The production build was verified using:
+---
 
-npm run build
+# Verification Status
 
- # Result:
+| Module / Requirement | Status |
+|---|---|
+| User Authentication | ✅ Verified |
+| Fitness Calculation | ✅ Verified |
+| AI Gym Trainer | ✅ Verified |
+| AI Dietician | ✅ Verified |
+| AI Fitness Habit Tracker | ✅ Verified |
+| Virtual Gym Buddy | ✅ Verified |
+| Pose-to-Performance Analyzer | ✅ Verified |
+| Gym Recommender | ✅ Verified |
+| Workout Planner | ✅ Verified |
+| Fitness Challenges | ✅ Verified |
+| Smart Gym MQTT | ✅ Verified |
+| Node-RED Integration | ✅ Verified |
+| Storage Integration | ✅ Verified |
+| Notifications | ✅ Verified |
+| Analytics Dashboard | ✅ Verified |
+| Performance Dashboard | ✅ Verified |
+| Admin Dashboard | ✅ Verified |
+| PostgreSQL Database | ✅ Verified |
+| Frontend Production Build | ✅ Passed |
+| Backend Automated Tests | ✅ 14 Passed |
 
-Build completed successfully
-Verification Status
-Module / Requirement	Status
-AI Gym Trainer	PASS
-AI Dietician	PASS
-NLP Diet Chatbot	PASS
-Nutrition Tracking	PASS
-Smart Gym + IoT	PASS
-MQTT + Node-RED	PASS
-AI Habit Tracker	PASS
-Behavioral AI	PASS
-Virtual Gym Buddy	PASS
-Sentiment / Emotional State	PASS
-Performance Analyzer	PASS
-Performance Score	PASS
-Analytics / Progress Reports	PASS
-Gym Recommender	PASS
-Historical Workout Data	PASS
-Workout Planner	PASS
-Fitness Challenges	PASS
-Notifications	PASS
-Profile	PASS
-Settings	PASS
-Admin Dashboard	PASS
-PostgreSQL	PASS
-Storage Integration	PASS
-Automated Tests	PASS
-Frontend Production Build	PASS
-Security
+---
 
-The following files and credentials must never be committed to GitHub:
+# Security
 
-.env
-.env.local
-API keys
-Database passwords
-JWT secrets
-AWS credentials
-Personal credentials
+The project implements application security mechanisms including:
 
-The repository .gitignore is configured to exclude sensitive environment files and development-generated files.
+- JWT-based authentication
+- Password hashing
+- Protected API endpoints
+- Environment variables for secrets
+- `.env` files excluded from Git
+- `.env.local` excluded from Git
+- `node_modules` excluded from Git
+- Backend virtual environment excluded from Git
 
-For deployment, environment variables should be configured through the hosting platform rather than hard-coded into source code.
+API keys and private credentials should be configured through environment variables and should not be committed to the repository.
+---
 
- # Mentor Demo
+# Mentor Demo
 
-The mentor does not need the developer's personal password.
+The recommended demonstration flow for the project is:
 
-The application provides user registration through:
+1. Register or log in to the application.
+2. Complete the fitness profile.
+3. Calculate BMI and daily calorie requirements.
+4. Open the AI Gym Trainer.
+5. Demonstrate an exercise using webcam-based pose detection.
+6. Show repetition counting and form feedback.
+7. Open the AI Dietician and request a personalized diet recommendation.
+8. Open the AI Fitness Habit Tracker and demonstrate behavioral prediction.
+9. Chat with the Virtual Gym Buddy.
+10. Open Performance and Analytics dashboards.
+11. Demonstrate fitness challenges and progress tracking.
+12. Open the Gym Recommender and show nearby gym recommendations.
+13. Open the Workout Planner.
+14. Demonstrate Smart Gym MQTT communication through Node-RED.
+15. Show the Admin Dashboard.
 
-/register
+---
 
-A mentor can create a separate account after the application is deployed.
+# Future Enhancements
 
-For local demonstration, the backend, frontend, database and Node-RED services can be started independently.
+Possible future improvements include:
 
-Future Enhancements
+- Mobile application
+- Wearable device integration
+- Real-time heart-rate monitoring
+- Advanced nutrition database
+- Additional exercise recognition models
+- Cloud deployment
+- Advanced AI-generated workout plans
+- Voice-based fitness assistant
+- Real gym equipment integration
+- Personalized long-term fitness prediction
+- Advanced progress forecasting
+- Cloud-based analytics
+- More advanced recommendation algorithms
 
-Potential production enhancements include:
+---
 
-Public cloud deployment
-Production AWS S3 storage
-Real gym IoT hardware integration
-Advanced pose models
-More exercise types
-Mobile application
-Advanced personalized nutrition
-Wearable-device integration
-Real-time equipment control
-Advanced recommendation models
-Cloud monitoring and analytics
-Author
+# Author
 
-Jahnavi
+**Jahnavi**
 
-B.Tech – Computer Science & Engineering (AI & ML)
+B.Tech – Computer Science and Engineering (AI & ML)
 
- # Project Status
+---
 
-AI Gym & Fitness Assistant
+# Project Status
 
-Core functionality: Completed and verified
+**AI Gym & Fitness Assistant — Internship / Final Project**
 
-The project includes the major AI fitness modules, backend APIs, frontend interface, database integration, machine-learning components, conversational AI, workout planning, challenges, analytics, storage integration, and MQTT/Node-RED IoT integration.
+The major application modules, AI features, backend APIs, frontend interface, database integration, IoT communication, storage integration, testing, and documentation have been implemented and verified in the local development environment.
 
-The source code is maintained in the GitHub repository:
-
-AI-Gym-Fitness-Assistant
-
+The project is structured as a modular AI-powered fitness ecosystem that can be extended with additional AI models, cloud services, wearable integrations, and real-world smart gym equipment in future versions.
 
